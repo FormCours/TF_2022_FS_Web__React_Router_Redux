@@ -1,12 +1,19 @@
-import './App.css'
+import './App.css';
+import { Outlet } from 'react-router-dom';
+import Header from './containers/header/header';
+import Footer from './containers/footer/footer';
 
 function App() {
 
   return (
-    <div className="App">
-      
-    </div>
-  )
+    <>
+      <Header />
+      <main className="App">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;
