@@ -14,13 +14,13 @@ const Header = () => (
     <nav>
       <ul className={style['nav-links']}>
         <li>
-          <CustomNavLink to='' text='Accueil' />
+          <CustomNavLink to='/' text='Accueil' />
         </li>
         <li>
-          <CustomNavLink to='product' text='Produit' />
+          <CustomNavLink to='/product' text='Produit' />
         </li>
         <li>
-          <CustomNavLink to='about' text='A Propos' />
+          <CustomNavLink to='/about' text='A Propos' />
         </li>
       </ul>
     </nav>
