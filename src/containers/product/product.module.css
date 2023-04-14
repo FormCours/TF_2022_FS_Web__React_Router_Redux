@@ -1,3 +1,4 @@
+/*** Table ***/
 .product-table {
   border: 1px solid navy;
   border-collapse: collapse;
@@ -19,4 +20,19 @@
 
 .product-table th, .product-table td {
   padding: 0.5rem;
+}
+
+/*** Form ***/
+.product-form {
+  text-align: start;
+}
+
+.product-form div {
+  margin-bottom: 0.1rem;
+}
+
+.product-form label::after{
+  content: ':';
+  margin-left: 0.5ch;
+  margin-right: 0.5ch;
 }

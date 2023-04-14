@@ -5,6 +5,7 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1ch;
 }
 
 .title-with-link h2 {

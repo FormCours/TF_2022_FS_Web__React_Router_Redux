@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { useId } from 'react';
+import style from './product.module.css';
 
 const productSchema = yup.object({
   name: yup.string().trim().required(),
@@ -36,7 +37,8 @@ const ProductForm = () => {
 
   return (
     <form onSubmit={handleSubmit(handleProductSubmit)}
-          onReset={handleProductReset}>
+          onReset={handleProductReset}
+          className={style['product-form']}>
       {/* (div>(label+input))*6 */}
       <div>
         <label htmlFor={idForm + 'name'}>Nom</label>
