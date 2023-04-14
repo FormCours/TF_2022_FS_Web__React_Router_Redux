@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "description": "Ceci est un produit simple en stock",
+    "code": "Zaza001",
+    "price": 42,
+    "discount": null,
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Product 2",
+    "description": "Ceci est un produit en promo !",
+    "code": "Zaza002",
+    "price": 100,
+    "discount": 25,
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Product 3",
+    "description": "Ceci est un produit qui n'est plus en stock",
+    "code": "Zaza003",
+    "price": 999.94,
+    "discount": null,
+    "inStock": false
+  }
+]
