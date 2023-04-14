@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { productActionCreate, productActionDelete } from '../actions/product.action';
 
-// Définition de l'état initial du store (categorie "product")
+// Définition de l'état initial du store (categorie "prod")
 // *************************************
 const initialState = {
   products: [

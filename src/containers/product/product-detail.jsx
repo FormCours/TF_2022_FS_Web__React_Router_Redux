@@ -1,12 +1,16 @@
 import PriceDisplay from '../../components/price-display/price-display';
-import mockup from './data-mockup.json';
+import { useSelector } from 'react-redux';
 
+const ProductDetail = ({ productId }) => {
 
-const ProductDetail = ({productId}) => {
+  // Récuperer le detail du produit (via "useSelector" de React-Redux)
+  const product = useSelector(state => state.prod.products.find(p => p.id === productId));
 
-  // Récuperer le detail du produit
-  // TODO Récuperer depuis le store le produit via l'productId
-  const product = mockup[2];
+  if (!product) {
+    return (
+      <p>Produit inconnu 🤦‍♂️</p>
+    );
+  }
 
   return (
     <>
@@ -14,10 +18,10 @@ const ProductDetail = ({productId}) => {
       {!product.inStock && (
         <p>Le produit actuellement indisponible 😭</p>
       )}
-      <p>Prix : <PriceDisplay price={product.price} discount={product.discount}/></p>
+      <p>Prix : <PriceDisplay price={product.price} discount={product.discount} /></p>
       <p>{product.description}</p>
     </>
-  )
-}
+  );
+};
 
 export default ProductDetail;

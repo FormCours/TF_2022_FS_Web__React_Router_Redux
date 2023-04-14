@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import PriceDisplay from '../../components/price-display/price-display';
 import { useNavigate } from 'react-router-dom';
-import style from './product.module.css'
-
-import mockup from './data-mockup.json';
+import style from './product.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { productActionDelete } from '../../store/actions/product.action';
 
 
 const ProductTableHead = () => (
@@ -37,17 +37,23 @@ const ProductTable = () => {
   // Permet de faire de la navigation dans react-router (sans Link / NavLink)
   const navigate = useNavigate();
 
-  // Récuperation des données
-  // TODO (mockup) A remplacer par celle du store Redux !
-  const products = mockup;
+  // Récuperation du dispatch, pour pouvoir envoyer des actions vers le store
+  const dispatch = useDispatch();
+
+  // Récuperation des données (via "useSelector" de React-Redux)
+  const products = useSelector(state => state.prod.products);
 
   const handleDetail = useCallback((id) => {
     navigate('/product/' + id);
   });
 
   const handleRemove = useCallback((id) => {
-    // TODO Remove product (=> Redux)
-    console.log('Remove product', id);
+    // Création de l'action via le "action creator"
+    const actionDelete = productActionDelete(id);
+    console.log('Action Delete', actionDelete);
+
+    // Envoi de l'action au store Redux
+    dispatch(actionDelete);
   });
 
   return (

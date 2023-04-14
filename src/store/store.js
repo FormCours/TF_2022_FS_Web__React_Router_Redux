@@ -6,7 +6,7 @@ const store = configureStore({
   
   // L'ensemble des reducers du store
   reducer: {
-    productReducer
+    prod: productReducer
   },
 
   // Activation des outils de dev (actif uniquement en DEV)
