@@ -1,0 +1,65 @@
+InitialState 
+************
+const state = {
+   person : {
+      firstname: 'Zaza',
+      lastname: 'Vanderquack',
+      house: {
+	fav: 1,
+        current: 1
+      }
+   },
+   houses: [
+      {
+         id: 1,
+         type: 'Principal',
+         loc: 'CanardVille'
+      },
+      {
+         id: 2,
+         type: 'Secondaire',
+         loc: 'PlageVille'
+      }
+   ],
+   count: 42,
+   message: 'Hello World'
+}
+
+Action
+******
+Ajouter une nouvelle maison qui est reprise en fav.
+
+const action = {
+   type: 'house/addNewFav',
+   payload: {
+      id: 4,
+      type: 'Secondaire',
+      loc: 'Belgique'
+   } 
+}
+
+-------------------------------------------------------
+
+Modification à faire dans le reducer
+************************************
+const newState = {
+   ...state,
+   person: {
+      ...state.person,
+      house: {
+         ...state.person.house,
+         fav: state.payload.id
+      }
+   },
+   houses: [
+      ...state.houses,
+      action.payload
+   ]
+}
+
+
+Modification a faire via Immer dans le reducer
+**********************************************
+
+state.person.house.fav = state.payload.id;
+state.hourse.push(state.payload);
