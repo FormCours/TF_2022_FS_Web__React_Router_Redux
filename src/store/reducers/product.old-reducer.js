@@ -21,18 +21,23 @@ const initialState = {
 // Définition du reducer qui permet de résoudre les actions
 // ********************************************************
 const productReducer = createReducer(initialState, (builder) => {
-  // Version AVEC Immer (Modern :o)
+  // Version SANS Immer (A l'ancienne !)
   builder
     .addCase(productActionCreate, (state, action) => {
-
-      state.products.push(action.payload);
-      state.count++;
+      return {
+        ...state,
+        count: state.count + 1,
+        products: [...state.products, action.payload]
+      };
     })
     .addCase(productActionDelete, (state, action) => {
       const targetId = action.payload;
-      
-      state.products = state.products.filter(product => product.id !== targetId);
-      state.count = state.products.length;
+      const products = state.products.filter(product => product.id !== targetId);
+      return {
+        ...state,
+        count: products.length,
+        products
+      }
     });
 });
 
