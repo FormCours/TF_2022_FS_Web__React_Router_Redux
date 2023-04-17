@@ -1,0 +1,21 @@
+JSON
+****
+{
+   "nbRoom": 42,
+   "color": "Pink",
+   "garden" : true
+}
+
+
+XML
+***
+<House>
+   <House.nbRoom>42</House.nbRoom>
+   <House.color>Pink</House.color>
+   <House.garden>true</House.garden>
+</House>
+
+
+Custom
+******
+House/nbRoom:42;color:Pink;garden:true;#
