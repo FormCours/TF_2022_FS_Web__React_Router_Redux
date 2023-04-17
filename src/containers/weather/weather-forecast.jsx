@@ -31,7 +31,9 @@ const WeatherForecast = () => {
 
   return (
     <div>
-      <p>Météo de "{result.city}" ({result.country})</p>
+      <p className={style['weather-title']}>
+        Météo de "{result.city}" ({result.country})
+      </p>
       <ul className={style['weather-result']}>
         {result.data.map(weather => (
           <WeatherForecastItem {...weather} key={weather.time} />
