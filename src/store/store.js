@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import productReducer from './reducers/product.reducer';
+import weatherReducer from './reducers/weather.reducer';
 
 // Doc : https://github.com/LogRocket/redux-logger#usage
 import loggerMiddleware from 'redux-logger';
@@ -10,7 +11,8 @@ const store = configureStore({
   
   // L'ensemble des reducers du store
   reducer: {
-    prod: productReducer
+    prod: productReducer,
+    weather: weatherReducer
   },
 
   // Activation des outils de dev (actif uniquement en DEV)

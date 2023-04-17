@@ -10,9 +10,10 @@ const SearchBar = ({label, onSearch}) => {
   const handleSearchSubmit = useCallback((e) => {
     e.preventDefault();
     
+    console.log('city', query);
     onSearch(query);
     setQuery('');
-  }, []);
+  }, [query]);
 
   return (
     <form onSubmit={handleSearchSubmit}>

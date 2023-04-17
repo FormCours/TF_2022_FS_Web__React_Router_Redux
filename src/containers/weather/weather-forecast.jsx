@@ -1,4 +1,4 @@
-import mockup from './data-mockup.json';
+import { useSelector } from 'react-redux';
 import style from './weather.module.css';
 import clsx from 'clsx';
 
@@ -24,10 +24,32 @@ const WeatherForecastItem = ({ temp, tempFeelsLike, weatherDescription, weatherI
 
 const WeatherForecast = () => {
 
-  // FIXME Use data in store Redux. Remove Mockup !!!
-  const result = mockup;
+  // Récupération des données du store
+  const { loading, result, error } = useSelector(state => state.weather);
 
-  // TODO Gestion du loading !
+  if (loading) {
+    return (
+      <div>
+        <p className={style['weather-title']}>Chargement...</p>
+      </div>
+    );
+  };
+
+  if(error) {
+    return (
+      <div>
+        <p className={style['weather-title']}>Erreur !</p>
+      </div>
+    )
+  }
+
+  if(!result) {
+    return (
+      <div>
+        <p className={style['weather-title']}>Pas de résultat</p>
+      </div>
+    )
+  }
 
   return (
     <div>
