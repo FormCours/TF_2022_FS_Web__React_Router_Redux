@@ -4,6 +4,7 @@ import weatherReducer from './reducers/weather.reducer';
 
 // Doc : https://github.com/LogRocket/redux-logger#usage
 import loggerMiddleware from 'redux-logger';
+import progressReducer from './reducers/progress.reducer';
 
 
 // Création d'un store Redux
@@ -12,7 +13,8 @@ const store = configureStore({
   // L'ensemble des reducers du store
   reducer: {
     prod: productReducer,
-    weather: weatherReducer
+    weather: weatherReducer,
+    progress: progressReducer
   },
 
   // Activation des outils de dev (actif uniquement en DEV)
